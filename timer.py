@@ -21,7 +21,7 @@ def countdown_timer(hours, minutes, seconds):
     print("\nTime's Up!!!")
 
 try:
-    time_input = input("Enter timer (HH:MM:SS): ").strip()
+    time_input = input("Enter the timer (Like This HH:MM:SS): ").strip()
 
     parts = time_input.split(":")
 
