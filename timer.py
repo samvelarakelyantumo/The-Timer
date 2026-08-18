@@ -3,8 +3,8 @@ import time
 
 def countdown_timer(hours, minutes, seconds):
     total_seconds = hours * 3600 + minutes * 60 + seconds
-    
-    print(f"Timer set to: {hours:02d}:{minutes:02d}:{seconds:02d}\n")
+
+    print(f"\nTimer set to: {hours:02d}:{minutes:02d}:{seconds:02d}\n")
 
     while total_seconds >= 0:
         h = total_seconds // 3600
@@ -20,5 +20,17 @@ def countdown_timer(hours, minutes, seconds):
 
     print("\nTime's Up!!!")
 
+try:
+    time_input = input("Enter timer (HH:MM:SS): ").strip()
 
-countdown_timer(0, 0, 15)
+    parts = time_input.split(":")
+
+    if len(parts) == 3:
+        hours = int(parts[0])
+        minutes = int(parts[1])
+        seconds = int(parts[2])
+        countdown_timer(hours, minutes, seconds)
+    else:
+        print("Invalid format. Please use HH:MM:SS (Like This 00:01:30).")
+except ValueError:
+    print("Enter valid numbers in the HH:MM:SS format.")
